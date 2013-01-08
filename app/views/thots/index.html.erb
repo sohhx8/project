@@ -1,0 +1,23 @@
+<h1>Listing thots</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @thots.each do |thot| %>
+  <tr>
+    <td><%= thot.content %></td>
+    <td><%= link_to 'Show', thot %></td>
+    <td><%= link_to 'Edit', edit_thot_path(thot) %></td>
+    <td><%= link_to 'Destroy', thot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Thot', new_thot_path %>

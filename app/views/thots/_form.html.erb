@@ -1,0 +1,21 @@
+<%= form_for(@thot) do |f| %>
+  <% if @thot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thot.errors.count, "error") %> prohibited this thot from being saved:</h2>
+
+      <ul>
+      <% @thot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
